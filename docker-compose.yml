@@ -1,0 +1,26 @@
+version: '3'
+services:
+  # React開発サーバ
+  react-app:
+    container_name: react-app
+    build: ./docker/react-app
+    # image: node:10.13-alpine
+    tty: true
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/app
+    working_dir: /app
+    # Docker用にpollingの設定。ファイルを書き換えた時のブラウザ自動更新を有効化
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    # command: /bin/bash
+  #
+  # # ビルド結果確認用サーバー
+  # serve:
+  #   build: ./server/serve
+  #   ports:
+  #     - 3001:3001
+  #   volumes:
+  #     - ./build:/home/workdir/build
+  #   command: serve -s /home/workdir/build -p 3001
