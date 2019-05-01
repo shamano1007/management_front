@@ -1,0 +1,40 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: management API
+  description: management API
+paths:
+  /login:
+    post:
+      description: ログイン
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/login_body'
+      responses:
+        200:
+          description: 成功
+        403:
+          description: 失敗
+components:
+  schemas:
+    login_id:
+      description: ログインID
+      type: string
+      example: '1'
+    password:
+      description: パスワード
+      required:
+        - login_id
+      type: string
+    login_body:
+      type: object
+      required:
+        - id
+        - password
+      properties:
+        id:
+          $ref: '#/components/schemas/login_id'
+        password:
+          $ref: '#/components/schemas/password'

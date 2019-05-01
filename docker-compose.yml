@@ -1,5 +1,15 @@
 version: '3'
 services:
+  # swaggerapi
+  swagger-api:
+    image: danielgtaylor/apisprout
+    container_name: "swagger-api"
+    ports:
+      - "8003:8000"
+    volumes:
+      - ./docker/swagger.yaml:/openapi.yaml
+    command: /openapi.yaml
+  # ==========================================
   # React開発サーバ
   react-app:
     container_name: react-app
