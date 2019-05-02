@@ -1,5 +1,5 @@
 import React from 'react'
-import CommonForm from '../Common/Form'
+import CommonForm from '../../common/Form'
 
 class Home extends React.Component {
 
