@@ -11,10 +11,16 @@ export default class BaseApi {
         body: data
       }
     )
-    .then((responseJson) => fnc(responseJson))
-    .catch((error) =>{
+    .then(response => this._parseJSON(response))
+    .then(responseData => fnc(responseData))
+    .catch(error =>{
       console.error(error);
     });
   }
 
+  static _parseJSON(response) {
+    return response.text().then(function(text) {
+      return text ? JSON.parse(text) : {}
+    })
+  }
 }

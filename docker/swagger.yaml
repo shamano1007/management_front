@@ -15,19 +15,16 @@ paths:
       responses:
         200:
           description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user'
+
         403:
           description: 失敗
+
 components:
   schemas:
-    login_id:
-      description: ログインID
-      type: string
-      example: '1'
-    password:
-      description: パスワード
-      required:
-        - login_id
-      type: string
     login_body:
       type: object
       required:
@@ -35,6 +32,18 @@ components:
         - password
       properties:
         login_id:
-          $ref: '#/components/schemas/login_id'
+          description: ログインID
+          type: string
+          example: '1'
         password:
-          $ref: '#/components/schemas/password'
+          description: パスワード
+          required:
+            - login_id
+          type: string
+    user:
+      type: object
+      properties:
+        name:
+          description: 名前
+          type: string
+          example: 'XXX'

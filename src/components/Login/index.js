@@ -11,7 +11,12 @@ class Home extends React.Component {
 
   onSubmit(e) {
     e.preventDefault();
-    LoginApi.post(this.state.data);
+    LoginApi.post(
+      this.state.data,
+      responseData => {
+        console.log(responseData);
+      }
+    );
   }
 
   render(){

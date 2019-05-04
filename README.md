@@ -8,9 +8,12 @@
 不要なフォルダを削除
 `$ rm -rf app`
 
+## API
+https://qiita.com/chinka/items/a084fd1c5ef9dcde4728
+
 ## Swagger
 https://tech-up.hatenablog.com/entry/2019/04/10/104218
-
+https://techblog.zozo.com/entry/swagger_yaml
 
 ## routes設定
 https://qiita.com/k-penguin-sato/items/e46725edba00013a8300
