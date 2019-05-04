@@ -31,10 +31,10 @@ components:
     login_body:
       type: object
       required:
-        - id
+        - login_id
         - password
       properties:
-        id:
+        login_id:
           $ref: '#/components/schemas/login_id'
         password:
           $ref: '#/components/schemas/password'

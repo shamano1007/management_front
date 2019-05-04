@@ -24,6 +24,7 @@ services:
     # Docker用にpollingの設定。ファイルを書き換えた時のブラウザ自動更新を有効化
     environment:
       - CHOKIDAR_USEPOLLING=true
+    # command: npm start
     # command: /bin/bash
   #
   # # ビルド結果確認用サーバー

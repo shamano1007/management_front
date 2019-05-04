@@ -1,17 +1,17 @@
 import React from 'react'
 import CommonForm from '../../common/Form'
+import LoginApi from '../../api/LoginApi'
 
 class Home extends React.Component {
 
   constructor(props){
     super(props);
     this.form = new CommonForm(this, {});
-
   }
 
   onSubmit(e) {
-    console.log(this.state.data);
     e.preventDefault();
+    LoginApi.post(this.state.data);
   }
 
   render(){
